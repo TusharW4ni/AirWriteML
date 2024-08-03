@@ -6,7 +6,7 @@ import json
 import os
 
 data = []
-counter = 1
+counter = 13
 is_connected = False
 
 def on_message(ws, message):
@@ -33,7 +33,7 @@ def disconnect():
     ws.close()
     df = pd.DataFrame(data, columns=['x', 'y', 'z'])
     df.index.name = 'index'
-    file_path = f'/home/tushar/sproj/AirWriteML/data/S/S_sample_{counter}.csv'
+    file_path = f'/home/tushar/sproj/AirWriteML/data/L/L_sample_{counter}.csv'
     df.to_csv(file_path, index=True)
     counter += 1
     data = []
